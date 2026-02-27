@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Khu lưu niệm Đại tướng Nguyễn Chí Thanh | Quảng Thọ</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Website giới thiệu Khu lưu niệm Đại tướng Nguyễn Chí Thanh tại Quảng Thọ, Thừa Thiên Huế.">
+    <meta name="keywords" content="Nguyễn Chí Thanh, Khu lưu niệm, Quảng Thọ, Huế, Di tích lịch sử">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        /* ================= RESET ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Times New Roman', serif;
+}
+
+body{
+    background:#1c1a17;
+    color:#e4dccc;
+    line-height:1.6;
+}
+
+/* ================= SECTION ================= */
+.section{
+    padding:80px 10%;
+}
+
+.dark-section{
+    background:#141210;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:36px;
+    letter-spacing:2px;
+    color:#d4af37;
+}
+
+.section-title.light h2{
+    color:#e8c76a;
+}
+
+.divider{
+    width:80px;
+    height:3px;
+    background:#b8963a;
+    margin:15px auto;
+}
+
+/* ================= TIMELINE ================= */
+.timeline-wrapper{
+    position:relative;
+}
+
+.timeline-wrapper::after{
+    content:"";
+    position:absolute;
+    width:3px;
+    background:#b8963a;
+    top:0;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.timeline-item{
+    width:50%;
+    padding:20px 40px;
+    position:relative;
+}
+
+.timeline-item.left{
+    left:0;
+}
+
+.timeline-item.right{
+    left:50%;
+}
+
+.timeline-content{
+    background:#2a2622;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+    transition:0.4s;
+}
+
+.timeline-content:hover{
+    transform:translateY(-8px);
+}
+
+.year{
+    color:#d4af37;
+    font-weight:bold;
+}
+
+/* ================= VALUE ================= */
+.value-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.value-card{
+    background:#2a2622;
+    padding:30px;
+    border-radius:10px;
+    transition:0.4s;
+}
+
+.value-card:hover{
+    transform:translateY(-8px);
+}
+
+/* ================= STATS ================= */
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:30px;
+    text-align:center;
+}
+
+.stat-box{
+    background:#2a2622;
+    padding:40px;
+    border-radius:10px;
+}
+
+.stat-box h3{
+    font-size:40px;
+    color:#d4af37;
+}
+
+/* ================= EXHIBITION 3D ================= */
+.exhibition-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.exhibit-card{
+    perspective:1000px;
+}
+
+.exhibit-inner{
+    position:relative;
+    width:100%;
+    height:200px;
+    transform-style:preserve-3d;
+    transition:transform 0.6s;
+}
+
+.exhibit-card:hover .exhibit-inner{
+    transform:rotateY(180deg);
+}
+
+.exhibit-front,
+.exhibit-back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    backface-visibility:hidden;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    text-align:center;
+}
+
+.exhibit-front{
+    background:#2a2622;
+    color:#d4af37;
+    font-size:20px;
+}
+
+.exhibit-back{
+    background:#3a332c;
+    transform:rotateY(180deg);
+}
+
+/* ================= GALLERY ================= */
+.gallery-filter{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.gallery-filter button{
+    background:#2a2622;
+    color:#d4af37;
+    border:none;
+    padding:10px 20px;
+    margin:5px;
+    cursor:pointer;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+.gallery-filter button:hover{
+    background:#b8963a;
+    color:#000;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery-item{
+    overflow:hidden;
+    border-radius:10px;
+}
+
+.gallery-item img{
+    width:100%;
+    display:block;
+    transition:0.4s;
+}
+
+.gallery-item img:hover{
+    transform:scale(1.1);
+}
+/* ================= FOOTER ================= */
+.footer{
+    background:#0f0d0b;
+    text-align:center;
+    padding:50px 10%;
+    color:#bfae8f;
+}
+
+.footer h3{
+    color:#d4af37;
+    margin-bottom:15px;
+}
+
+.footer p{
+    margin:10px 0;
+    font-size:14px;
+}
+
+.copyright{
+    margin-top:20px;
+    font-size:13px;
+    color:#7a6c55;
+}
+
+/* ================= BACK TO TOP ================= */
+#topBtn{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    background:#b8963a;
+    color:#000;
+    border:none;
+    padding:12px 16px;
+    font-size:18px;
+    cursor:pointer;
+    border-radius:50%;
+    display:none;
+    transition:0.3s;
+}
+
+#topBtn:hover{
+    background:#d4af37;
+}
+.gallery-item{
+    position:relative;
+    width:100%;
+    aspect-ratio:1/1;  /* Ô vuông */
+    overflow:hidden;
+    border-radius:10px;
+}
+
+.gallery-item img,
+.gallery-item video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= PRELOADER ================= -->
+<div id="preloader">
+    <div class="loader-line"></div>
+    <h2>Đang tải không gian lịch sử...</h2>
+</div>
+
+
+<!-- ================= NAVBAR ================= -->
+<header class="header">
+    <div class="container nav-container">
+        <div class="logo">
+            <h1>Nguyễn Chí Thanh</h1>
+            <span>Khu lưu niệm lịch sử</span>
+        </div>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="#hero">Trang chủ</a></li>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="#timeline">Cuộc đời</a></li>
+                <li><a href="#space">Không gian</a></li>
+                <li><a href="#gallery">Thư viện</a></li>
+                <li><a href="#visit">Tham quan</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</header>
+
+
+<!-- ================= HERO ================= -->
+<section id="hero" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h2>KHU LƯU NIỆM</h2>
+        <h1>ĐẠI TƯỚNG NGUYỄN CHÍ THANH</h1>
+        <p>
+            Nơi lưu giữ giá trị lịch sử – giáo dục truyền thống cách mạng 
+            cho thế hệ hôm nay và mai sau.
+        </p>
+        <a href="#about" class="btn-primary">Khám phá</a>
+    </div>
+</section>
+
+
+<!-- ================= GIỚI THIỆU ================= -->
+<section id="about" class="about section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Giới thiệu chung</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-text">
+                <p>
+                    Khu lưu niệm Đại tướng Nguyễn Chí Thanh tọa lạc tại xã Quảng Thọ,
+                    huyện Quảng Điền, tỉnh Thừa Thiên Huế. Đây là nơi tưởng niệm và 
+                    tri ân những đóng góp to lớn của Đại tướng đối với sự nghiệp 
+                    cách mạng của dân tộc Việt Nam.
+                </p>
+
+                <p>
+                    Công trình không chỉ mang giá trị kiến trúc truyền thống
+                    mà còn là không gian giáo dục lịch sử, nơi tổ chức các hoạt động 
+                    sinh hoạt chính trị, tham quan và học tập cho thế hệ trẻ.
+                </p>
+            </div>
+
+            <div class="about-info">
+                <ul>
+                    <li><strong>Địa điểm:</strong> Quảng Thọ, Quảng Điền, Huế</li>
+                    <li><strong>Loại hình:</strong> Di tích lịch sử – văn hóa</li>
+                    <li><strong>Ý nghĩa:</strong> Giáo dục truyền thống cách mạng</li>
+                    <li><strong>Hoạt động:</strong> Tham quan – nghiên cứu – sinh hoạt đoàn thể</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ================= TIMELINE CUỘC ĐỜI ================= -->
+<section id="timeline" class="timeline section dark-section">
+    <div class="container">
+
+        <div class="section-title light">
+            <h2>Cuộc đời và sự nghiệp</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="timeline-wrapper">
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <span class="year">1914</span>
+                    <h3>Thời niên thiếu</h3>
+                    <p>
+                        Đại tướng Nguyễn Chí Thanh sinh năm 1914 tại Quảng Thọ, 
+                        Thừa Thiên Huế. Từ nhỏ đã sớm giác ngộ tinh thần yêu nước 
+                        và tham gia phong trào cách mạng.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <span class="year">1937</span>
+                    <h3>Gia nhập Đảng Cộng sản Đông Dương</h3>
+                    <p>
+                        Bước ngoặt quan trọng đánh dấu sự gắn bó trọn đời với 
+                        lý tưởng cách mạng và con đường đấu tranh giải phóng dân tộc.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <span class="year">1945 – 1954</span>
+                    <h3>Kháng chiến chống Pháp</h3>
+                    <p>
+                        Đảm nhiệm nhiều trọng trách trong tổ chức lực lượng, 
+                        góp phần vào thắng lợi chung của cuộc kháng chiến.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <span class="year">1965 – 1967</span>
+                    <h3>Lãnh đạo chiến trường miền Nam</h3>
+                    <p>
+                        Trực tiếp chỉ đạo chiến lược tại chiến trường miền Nam,
+                        đóng góp quan trọng vào phong trào đấu tranh giải phóng.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <span class="year">1967</span>
+                    <h3>Di sản để lại</h3>
+                    <p>
+                        Tư tưởng, phong cách lãnh đạo và tinh thần cách mạng
+                        của Đại tướng tiếp tục được gìn giữ và phát huy đến ngày nay.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= GIÁ TRỊ LỊCH SỬ ================= -->
+<section class="value section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Giá trị lịch sử và giáo dục</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="value-grid">
+
+            <div class="value-card">
+                <h3>Giá trị lịch sử</h3>
+                <p>
+                    Khu lưu niệm là minh chứng sống động cho một giai đoạn 
+                    lịch sử hào hùng của dân tộc, góp phần khẳng định vai trò 
+                    của Đại tướng trong sự nghiệp cách mạng.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <h3>Giá trị văn hóa</h3>
+                <p>
+                    Không gian kiến trúc mang đậm bản sắc truyền thống Huế,
+                    kết hợp hài hòa giữa yếu tố tâm linh và giáo dục cộng đồng.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <h3>Giá trị giáo dục</h3>
+                <p>
+                    Là địa điểm tổ chức tham quan, sinh hoạt chính trị,
+                    giúp thế hệ trẻ hiểu rõ hơn về truyền thống yêu nước.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= THỐNG KÊ ================= -->
+<section class="stats section dark-section">
+    <div class="container">
+
+        <div class="section-title light">
+            <h2>Thống kê hoạt động</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="stats-grid">
+
+            <div class="stat-box">
+                <h3 class="counter" data-target="50000">0</h3>
+                <p>Lượt khách tham quan</p>
+            </div>
+
+            <div class="stat-box">
+                <h3 class="counter" data-target="120">0</h3>
+                <p>Hiện vật trưng bày</p>
+            </div>
+
+            <div class="stat-box">
+                <h3 class="counter" data-target="30">0</h3>
+                <p>Sự kiện giáo dục mỗi năm</p>
+            </div>
+
+            <div class="stat-box">
+                <h3 class="counter" data-target="1967">0</h3>
+                <p>Năm ghi dấu mốc lịch sử</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ================= KHÔNG GIAN TRƯNG BÀY ================= -->
+<section class="exhibition section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Không gian trưng bày</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="exhibition-grid">
+
+            <div class="exhibit-card">
+                <div class="exhibit-inner">
+                    <div class="exhibit-front">
+                        <h3>Nhà lưu niệm</h3>
+                    </div>
+                    <div class="exhibit-back">
+                        <p>
+                            Không gian tái hiện nơi sinh hoạt và làm việc,
+                            lưu giữ nhiều hiện vật quý giá về cuộc đời Đại tướng.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exhibit-card">
+                <div class="exhibit-inner">
+                    <div class="exhibit-front">
+                        <h3>Khu trưng bày hiện vật</h3>
+                    </div>
+                    <div class="exhibit-back">
+                        <p>
+                            Trưng bày tài liệu, hình ảnh, kỷ vật qua các thời kỳ
+                            kháng chiến và hoạt động cách mạng.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exhibit-card">
+                <div class="exhibit-inner">
+                    <div class="exhibit-front">
+                        <h3>Khu tưởng niệm</h3>
+                    </div>
+                    <div class="exhibit-back">
+                        <p>
+                            Không gian trang nghiêm, là nơi tổ chức các hoạt động
+                            tri ân và sinh hoạt truyền thống.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+<section class="gallery section dark-section">
+    <div class="container">
+
+        <div class="section-title light">
+            <h2>Thư viện hình ảnh</h2>
+            <div class="divider"></div>
+        </div>
+
+        <!-- FILTER BUTTON -->
+        <div class="gallery-filter">
+            <button onclick="filterSelection('all')">Tất cả</button>
+            <button onclick="filterSelection('architecture')">Kiến trúc</button>
+            <button onclick="filterSelection('artifact')">Hiện vật</button>
+            <button onclick="filterSelection('event')">Sự kiện</button>
+        </div>
+
+        <!-- IMAGE GRID -->
+        <div class="gallery-grid">
+
+            <div class="gallery-item architecture">
+                <img src="data:image/jpeg;base64,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"">
+            </div>
+
+            <div class="gallery-item artifact">
+                <img src="https://cdn.tcdulichtphcm.vn/upload/1-2024/images/2024-03-22/z5273047137557_85b3cae450c1231ec6972cec684bd2bd-1711098579-672-width1429height1072.jpg" alt="">
+            </div>
+
+            <div class="gallery-item event">
+                <img src="https://lh6.googleusercontent.com/proxy/MqRh4UL4KIYLpTMcbEv_A290DCOkb05IVeqDsf4hu7EeeVhaGo6qSa5CMIVnbctWD0q6OZUGSQEkPlmFAhBjwa0cXPZdLyS3nXeZgCMiJBowZZ5o8A" alt="">
+            </div>
+
+            <div class="gallery-item architecture">
+                <img src="https://cdn.tcdulichtphcm.vn/upload/1-2024/images/2024-03-22/z5272828860180_589ed5e5c4369b91520608935f5fa1e6-1711098579-372-width1430height803.jpg" alt="">
+            </div>
+
+            <div class="gallery-item event">
+        <video controls>
+            <source src="2.mp4" type="video/mp4">
+        </video>
+    </div>
+
+            <div class="gallery-item architecture">
+                <video controls>
+            <source src="3.mp4" type="video/mp4">
+        </video>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<script>
+
+/* ================= COUNTER ================= */
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+    counter.innerText = '0';
+
+    const updateCounter = () => {
+        const target = +counter.getAttribute('data-target');
+        const current = +counter.innerText;
+
+        const increment = target / 200;
+
+        if(current < target){
+            counter.innerText = Math.ceil(current + increment);
+            setTimeout(updateCounter, 15);
+        } else {
+            counter.innerText = target;
+        }
+    };
+
+    updateCounter();
+});
+
+
+/* ================= GALLERY FILTER ================= */
+function filterSelection(category){
+    const items = document.querySelectorAll('.gallery-item');
+
+    if(category === "all") category = "";
+
+    items.forEach(item => {
+        item.style.display = "none";
+        if(item.className.indexOf(category) > -1){
+            item.style.display = "block";
+        }
+    });
+}
+
+
+/* ================= SCROLL FADE IN ================= */
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = "translateY(0)";
+        }
+    });
+}, {
+    threshold: 0.2
+});
+
+document.querySelectorAll('.section').forEach(section => {
+    section.style.opacity = 0;
+    section.style.transform = "translateY(50px)";
+    section.style.transition = "all 1s ease";
+    observer.observe(section);
+});
+/* ================= BACK TO TOP ================= */
+const topBtn = document.getElementById("topBtn");
+
+window.onscroll = function(){
+    if(document.documentElement.scrollTop > 300){
+        topBtn.style.display = "block";
+    } else {
+        topBtn.style.display = "none";
+    }
+};
+
+topBtn.onclick = function(){
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+};
+
+</script>
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <div class="container">
+        <h3>Khu Lưu Niệm Nguyễn Chí Thanh</h3>
+        <p>
+            Địa chỉ: Quảng Thọ, Quảng Điền, Thừa Thiên Huế <br>
+            Điện thoại: 0234 3 888 888 <br>
+            Email: info@khuluniem.vn
+        </p>
+
+        <p class="copyright">
+            © 2026 Bản quyền thuộc về NHÓM 2 12B1 | Thiết kế bởi Nhóm 2
+        </p>
+    </div>
+</footer>
+
+<!-- BACK TO TOP BUTTON -->
+<button id="topBtn">↑</button>
+</body>
